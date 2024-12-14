@@ -37,7 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tasks',
+    'rest_framework',
+    'rest_framework.authtoken', 
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,8 +85,12 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  # Use MySQL engine
+        'NAME': 'task',  # Replace with your database name
+        'USER': 'root',  # Replace with your MySQL username
+        'PASSWORD': 'harare',  # Replace with your MySQL password
+        'HOST': 'localhost',  # Host where the MySQL server is running (usually localhost)
+        'PORT': '3306',  # Default MySQL port
     }
 }
 
