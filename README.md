@@ -14,7 +14,24 @@
     venv\Scripts\activate    # Windows
 
 ## Install dependencies:
-4. pip install django
+4. pip install django mysqlclient djangorestframework
 
 ## Run the server:
 5. python manage.py runserver
+
+## Authentication Setup
+
+This API uses token-based authentication to secure the endpoints.
+
+### 1. Obtain a Token
+
+To authenticate a user and receive a token:
+
+- Send a `POST` request to the `api-token-auth/` endpoint.
+- Use `x-www-form-urlencoded` with the following parameters:
+  - `username`: Your username
+  - `password`: Your password
+
+**Example:**
+```bash
+POST http://localhost:8000/api-token-auth/
