@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
     'tasks',
     'rest_framework',
     'rest_framework.authtoken', 
@@ -51,6 +52,7 @@ REST_FRAMEWORK = {
     ],
 }
 
+#AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
