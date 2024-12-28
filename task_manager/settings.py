@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'tasks',
     'rest_framework',
     'rest_framework.authtoken', 
+    'django_filters',
 ]
 
 REST_FRAMEWORK = {
@@ -50,6 +51,9 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',  # Ensure that views are protected
     ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ]
 }
 
 #AUTH_USER_MODEL = 'users.CustomUser'
